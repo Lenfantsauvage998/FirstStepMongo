@@ -1,16 +1,14 @@
 1. use Personas 
-Personas> db.productos.insertOne({ nombre: 'Juan Perez', edad: 30, cuidad: 'Nueva York', })
-Personas> db.productos.insertOne({ nombre: 'Maria Gonzales', edad: 35, cuidad: 'Los Angeles', 
-Personas> db.productos.insertOne({ nombre: 'Carlos Ramirez', edad: 28, cuidad: 'Nueva York',})
+Show collections 
+db.createCollections ("personas",{})
+db.personas.insertOne({ nombre: 'Juan Perez', edad: 30, cuidad: 'Nueva York', })
+db.personas.insertOne({ nombre: 'Maria Gonzales', edad: 35, cuidad: 'Los Angeles',}) 
+db.personas.insertOne({ nombre: 'Carlos Ramirez', edad: 28, cuidad: 'Nueva York',})
 
-2.Personas> db.productos.find()
+2.db.personas.find()
 
-3.Personas> db.productos.find({ edad: { $gte: 25 } })
+3.db.personas.find({ edad: { $gte: 25 } })
 
-{
+4.db.personas.updateOne({ nombre: 'Juan Perez' }, {$set: {edad:31}})
 
-
-
-4.Personas> db.productos.updateOne({ nombre: 'Juan Perez' }, {$set: {edad:31}})
-
-5.db.productos.updateMany({$and: [{ edad: { $gte: 25 } },{ cuidad: 'Nueva York' }]},{ $set: { cuidad: 'Los Angeles' } })cd 
+5.db.personas.updateMany({$and: [{ edad: { $gte: 25 } },{ cuidad: 'Nueva York' }]},{ $set: { cuidad: 'Los Angeles' } }) 
